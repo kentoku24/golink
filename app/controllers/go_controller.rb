@@ -5,9 +5,9 @@ class GoController < ApplicationController
     #url = Link.find_by(name: word)&.url
     url = Link.find_by(name: word).try(:url)
     if url
-      redirect_to controller: 'links'
-    else
       redirect_to url
+    else
+      redirect_to controller: 'links'
     end
   end
 end
