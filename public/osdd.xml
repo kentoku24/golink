@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
- <ShortName>go2link search</ShortName>
+ <ShortName>go</ShortName>
  <Description>go2link search</Description>
  <Url type="text/html" method="get" template="http://go2link.herokuapp.com/{searchTerms}"/>
   <Url type="application/x-suggestions+json" rel="suggestions" template="http://go2link.herokuapp.com/suggest/{searchTerms}" />
