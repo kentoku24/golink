@@ -3,4 +3,5 @@
  <ShortName>go2link search</ShortName>
  <Description>go2link search</Description>
  <Url type="text/html" method="get" template="http://go2link.herokuapp.com/{searchTerms}"/>
+  <Url type="application/x-suggestions+json" rel="suggestions" template="http://go2link.herokuapp.com/suggest/{searchTerms}" />
 </OpenSearchDescription>
