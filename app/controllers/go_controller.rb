@@ -17,6 +17,9 @@ class GoController < ApplicationController
     url = Link.find_by(name: word).try(:url) || \
           Link.where(Link.arel_table[:name].matches(word + "%"))\
                                            .limit(1).try!(:first).try!(:url)
+    
+    Accesslog.new(word: word, params: rest || spaced_params).save
+
 
     if url
 
