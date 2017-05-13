@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
 end
 
 def block_foreign_hosts
-  whitelist_prefix = ENV['whitelist_prefix'].split(',')
+  logger.info("whitelist: " + ENV['WHITELIST'])
+  whitelist_prefix = ENV['WHITELIST'].split(',')
   
-  logger.info(whitelist_prefix + " remote_ip: " + request.remote_ip)
+  logger.info("whitelist: %s remote_ip: %s" % [whitelist_prefix, request.remote_ip])
   whitelist_prefix.each do |item|
     return false if request.remote_ip.start_with?(item)
   end
