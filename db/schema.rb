@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503020212) do
+ActiveRecord::Schema.define(version: 20170515144223) do
 
   create_table "accesslogs", force: :cascade do |t|
     t.string   "word"
@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 20170503020212) do
   create_table "links", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.decimal  "count",      default: "0.0"
+    t.index ["name"], name: "index_links_on_name"
   end
 
 end

@@ -14,14 +14,18 @@ class GoController < ApplicationController
     #url = Link.find_by(name: word)&.url
     
     #search table for exact match, then do prefix search when no match found
-    url = Link.find_by(name: word).try(:url) || \
+    link = Link.find_by(name: word) || \
           Link.where(Link.arel_table[:name].matches(word + "%"))\
-                                           .limit(1).try!(:first).try!(:url)
+                                           .limit(1).try!(:first)
     
     Accesslog.new(word: word, params: rest || spaced_params).save
 
 
-    if url
+    if link
+      link.count += 1
+      link.save
+
+      url = link.url
 
       # case1: [word]/path/to/somewhere
       if rest

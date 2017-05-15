@@ -4,7 +4,8 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    @links = Link.order(count: :desc, name: :asc)
+    @link = Link.new
   end
 
   # GET /links/1
