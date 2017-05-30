@@ -16,7 +16,7 @@
     <% @links.each do |link| %>
       <tr>
         <td><%= link.name %></td>
-        <td><%= link.url %></td>
+        <td><%= link_to( (link.url.length > 200) ? link.url[0..150]+' ... '+ link.url[-20..-1] : link.url, link.url) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_link_path(link), :class => 'btn btn-default btn-xs' %>
