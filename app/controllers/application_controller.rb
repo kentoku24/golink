@@ -8,6 +8,7 @@ def block_foreign_hosts
   whitelist_prefix = ENV['WHITELIST'].split(',')
   
   logger.info("whitelist: %s remote_ip: %s" % [whitelist_prefix, request.remote_ip])
+  return false if whitelist_prefix.include? '*'
   whitelist_prefix.each do |item|
     return false if request.remote_ip.start_with?(item)
   end
