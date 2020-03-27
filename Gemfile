@@ -25,7 +25,7 @@ gem 'less-rails', '>= 2.8.0'
 gem 'twitter-bootstrap-rails', '>= 4.0.0'
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '>= 4.3.4'
+gem 'jquery-rails', '>= 4.3.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
