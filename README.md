@@ -10,3 +10,4 @@ type go[tab]links to add/remove golinks.
 
 Now availabe SaaS version golinks.io [History of golink](https://medium.com/@golinks/the-full-history-of-go-links-and-the-golink-system-cbc6d2c8bb3)
 
+then OSS version exists too [trot.to](https://www.trot.to/)
